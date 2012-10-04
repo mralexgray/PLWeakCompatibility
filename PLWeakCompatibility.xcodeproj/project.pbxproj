@@ -61,19 +61,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0538887D1524025B00CDC1DF /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		053887991523F6CD00CDC1DF /* PLWeakCompatibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PLWeakCompatibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0538879D1523F6CD00CDC1DF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -332,7 +319,6 @@
 				053887951523F6CD00CDC1DF /* Frameworks */,
 				053887961523F6CD00CDC1DF /* Headers */,
 				053887971523F6CD00CDC1DF /* Resources */,
-				0538887D1524025B00CDC1DF /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -626,10 +612,12 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "PLWeakCompatibility/PLWeakCompatibility-Info.plist";
+				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = PLWeakCompatibility;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -650,9 +638,11 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "PLWeakCompatibility/PLWeakCompatibility-Info.plist";
+				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = PLWeakCompatibility;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
