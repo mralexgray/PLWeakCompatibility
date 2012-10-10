@@ -431,7 +431,7 @@ static BOOL IsTollFreeBridged(Class class, id obj)
 
 static BOOL IsConstantObject(id obj)
 {
-  unsigned int retainCount = [obj retainCount];
+  NSUInteger retainCount = [obj retainCount];
   return retainCount == UINT_MAX || retainCount == INT_MAX;
 }
 
@@ -524,9 +524,9 @@ static BOOL CanNativeZWRClass(Class c)
     if(!c)
         return YES;
     
-    const char *name = class_getName(c);
+	const char *name = class_getName(c);
     unsigned char hash[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(name, strlen(name), hash);
+    CC_SHA1(name, strlen(name), hash);  //ALEX
     
     if(HashPresentInTable(hash, CC_SHA1_DIGEST_LENGTH, _MAZeroingWeakRefClassNativeWeakReferenceNotAllowedTable))
         return NO;
@@ -573,7 +573,7 @@ static void PatchKVOSubclass(Class class)
 
 static void RegisterCustomSubclass(Class subclass, Class superclass)
 {
-    [gCustomSubclassMap setObject: subclass forKey: superclass];
+    [gCustomSubclassMap setObject: subclass forKey: NSStringFromClass(superclass)]; //alex
     [gCustomSubclasses addObject: subclass];
 }
 
