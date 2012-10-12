@@ -13,8 +13,6 @@
 
 #define EXCLUDE_STUB_PROTOTYPES 1
 #import "PLWeakCompatibilityStubs.h"
-
-
 #define TESTCLASS(name, superclass) \
     @interface name : superclass \
     @property (copy) dispatch_block_t releaseBlock; \

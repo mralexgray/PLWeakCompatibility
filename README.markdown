@@ -12,16 +12,12 @@ To use `PLWeakCompatibility`:
 3. There is no step 3!
 
 Note that, by default, `PLWeakCompatibility` uses `MAZeroingWeakRef` to handle `__weak` *if* `MAZeroingWeakRef` is present. If not, it uses its own, less sophisticated, internal implementation. If you are already using `MAZeroingWeakRef`, then `PLWeakCompatibility` will take advantage of it. If you're not, you don't need it. There is nothing you need to do to enable the use of `MAZeroingWeakRef`, it will simply be used if it's in your project.
-
-
 Implementation Notes
 --------------------
 
 The built-in weak reference implementation is basic but serviceable. It works by swizzling out `-release` and `-dealloc` on target classes directly. This means that every instance of any weakly referenced class takes a performance hit for those operations, even for instances which are not themselves weakly referenced.
 
 This swizzling *should* be benign, but as with all things runtime manipulation, problems may occur. In particular, I do not anticipate weak references to bridged CoreFoundation objects working at all, and there may be conflicts with Key-Value Observing. The good news is that, since the `PLWeakCompatibility` implementation is only active on older OSes, you have stable targets to test against, and can know that future updates won't affect compatibility.
-
-
 Compatibility Notes
 -------------------
 

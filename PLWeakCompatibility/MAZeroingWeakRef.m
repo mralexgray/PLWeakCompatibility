@@ -17,8 +17,6 @@
 #import <mach/mach.h>
 #import <mach/port.h>
 #import <pthread.h>
-
-
 /*
  The COREFOUNDATION_HACK_LEVEL macro allows you to control how much horrible CF
  hackery is enabled. The following levels are defined:
@@ -72,16 +70,12 @@
 
 @end
 #endif
-
-
 @interface MAZeroingWeakRef ()
 
 - (void)_zeroTarget;
 - (void)_executeCleanupBlockWithTarget: (id)target;
 
 @end
-
-
 static id (*objc_loadWeak_fptr)(id *location);
 static id (*objc_storeWeak_fptr)(id *location, id obj);
 
@@ -117,8 +111,6 @@ static id (*objc_storeWeak_fptr)(id *location, id obj);
 }
 
 @end
-
-
 @implementation MAZeroingWeakRef
 
 #if COREFOUNDATION_HACK_LEVEL >= 2

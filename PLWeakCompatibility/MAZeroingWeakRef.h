@@ -6,8 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
 @interface MAZeroingWeakRef : NSObject
 {
     id _target;

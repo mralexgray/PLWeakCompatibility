@@ -128,8 +128,6 @@ PLObjectPtr objc_storeWeak(PLObjectPtr *location, PLObjectPtr obj) {
 
     return obj;
 }
-
-
 ////////////////////
 #pragma mark Internal Globals and Prototypes
 ////////////////////
@@ -176,8 +174,6 @@ static SEL releaseSEL;
 static SEL releaseSELSwizzled;
 static SEL deallocSEL;
 static SEL deallocSELSwizzled;
-
-
 ////////////////////
 #pragma mark Primitive Functions
 ////////////////////
@@ -268,8 +264,6 @@ static void PLUnregisterWeak(PLObjectPtr *location) {
             CFSetRemoveValue(addresses, location);
     } pthread_mutex_unlock(&gWeakMutex);
 }
-
-
 ////////////////////
 #pragma mark Internal Functions
 ////////////////////

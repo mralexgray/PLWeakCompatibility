@@ -12,8 +12,6 @@
 // our object pointers. Even with __unsafe_unretained, ARC likes to do things like
 // retain and release intermediate values, which gets us into serious trouble.
 typedef void *PLObjectPtr;
-
-
 // These are prototypes of the various runtime functions the compiler calls to handle
 // __weak variables. If you import this header and these prototypes interfere with
 // the official ones (due to using PLObjectPtr instead of id), simply do
